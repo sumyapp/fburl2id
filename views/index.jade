@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/', method='get')
+    div(data-role='fieldcontain')
+      label(for='facebook_url') FacebookIDを調べたい人のFacebookアカウント(プロフィール)ページのURLを入力して下さい
+      br
+      input(id='facebook_url',type='text',value='',size="100",placeholder='https://www.facebook.com/zuck',name='facebook_url')
+    div(data-role='fieldcontain') 
+      input(type='submit',value='Convert FacebookProfileUrl to FacebookID',data-transition='fade', data-theme='c')
+  if facebook_id != ""
+    p.
+      #{facebook_url} の
+      FacebookIDは #{facebook_id} です。
