@@ -16,7 +16,11 @@ function getFacebookGraphByUserName(username){
  */
 exports.index = function(req, res){
   // request内の変数からfacebook_urlを取得
-  var facebook_url = req.query.facebook_url
+  var facebook_url = "https://www.facebook.com/zuck";
+    
+    if(req.query.facebook_url) {
+      facebook_url = req.query.facebook_url
+    }
     console.log(facebook_url)
 
     // facebook_urlであることを確認する
